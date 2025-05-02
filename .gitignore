@@ -1,5 +1,7 @@
 # Keep these files private
 lists.py
+peRatioByIndustry.py
+roeByIndustry.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
