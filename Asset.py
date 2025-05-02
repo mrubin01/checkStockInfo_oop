@@ -81,7 +81,7 @@ class Equity(Asset):
         try:
             stock = yf.Ticker(self._symbol, session=session)
             div = stock.history(start=start, end=end)["Dividends"].to_frame(name=self.symbol)
-            tot_div = round(div.sum()[0], 3)
+            tot_div = div.sum()[0]
             # compute the issues per year
             for index, row in div.iterrows():
                 if row[0] > 0:
@@ -105,7 +105,7 @@ class Equity(Asset):
         try:
             stock = yf.Ticker(self._symbol, session=session)
             div = stock.history(start=start_date, end=end_date)["Dividends"].to_frame(name=self.symbol)
-            ytd_div = round(div.sum()[0], 3)
+            ytd_div = div.sum()[0]
         except:
             return -999999
 
